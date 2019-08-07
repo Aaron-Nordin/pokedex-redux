@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { setUsername } from "../../ducks/reducer";
-import { getPokemon } from "../../ducks/pokeReducer";
-import { connect } from "react-redux";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { setUsername } from '../../ducks/reducer'
+import { getPokemon } from '../../ducks/pokeReducer'
+import { connect } from 'react-redux'
 
 const Cover = props => {
   return (
@@ -18,7 +18,10 @@ const Cover = props => {
         </div>
         <div className="lid">
           <Link to="/open">
-            <div onClick={props.getPokemon} className="triangle-button" />
+            <div 
+              onClick={props.getPokemon} 
+              className="triangle-button" 
+            />
           </Link>
           <div className="inputs">
             <input
@@ -30,17 +33,17 @@ const Cover = props => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 function mapStateToProps(reduxState) {
-  const { user } = reduxState.userInfo;
-  return { user };
+  const { user } = reduxState.userInfo
+  return { user }
 }
 
 export default connect(
   mapStateToProps,
   { setUsername, getPokemon }
-)(Cover);
-//1. state we want, if none, use null
-//2. action builders we're using, which connect() puts on props
+)(Cover)
+// 1. state we want
+// 2. action builders we're using
